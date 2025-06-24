@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import path from "path";
 import bodyParser from "body-parser";
 import router from "./Routes/router.js";
+import connectDataBase from "./config/DBCofig.js";
+
 dotenv.config();
 
 import { dirname } from "path";
@@ -14,9 +16,9 @@ const __dirname = dirname(__filename);
 
 const app = express();
 app.use(cors({ origin: "*" }));
-app.use(express.json());
-app.use(bodyParser.json());
 
+app.use(bodyParser.json());
+connectDataBase();
 app.use("/api", router);
 
 app.use(express.static(path.join(__dirname, "out")));

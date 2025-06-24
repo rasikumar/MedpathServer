@@ -1,21 +1,16 @@
-import db from "../config/DBCofig.js";
+import mongoose from "mongoose";
 
-// Model/University.js
-export const UniversityForm = {
-  create: async (data) => {
-    return await db.query(
-      `INSERT INTO university_forms 
-      (first_name, last_name, dob, mobile, email, city, university_name) 
-      VALUES (?, ?, ?, ?, ?, ?, ?)`,
-      [
-        data.firstName,
-        data.lastName,
-        data.dob,
-        data.mobile,
-        data.email,
-        data.city,
-        data.university_name,
-      ]
-    );
-  },
-};
+const universitySchema = new mongoose.Schema({
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  dob: { type: String },
+  mobile: { type: String, required: true },
+  email: { type: String, required: true },
+  city: { type: String },
+  university_name: { type: String, required: true },
+});
+
+export const UniversityForm = mongoose.model(
+  "UniversityForm",
+  universitySchema
+);

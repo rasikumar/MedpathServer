@@ -1,11 +1,12 @@
-import db from "../config/DBCofig.js";
+import mongoose from "mongoose";
 
-export const EnquiryForm = {
-  create: async (data) => {
-    return await db.query(
-      `INSERT INTO inquiry (name, email, mobile, country, message, dob)
-     VALUES (?, ?, ?, ?, ?,?)`,
-      [data.name, data.email, data.mobile, data.country, data.message, data.dob]
-    );
-  },
-};
+const enquirySchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  mobile: { type: String, required: true },
+  country: { type: String, required: true },
+  message: { type: String },
+  dob: { type: String },
+});
+
+export const EnquiryForm = mongoose.model("Enquiry", enquirySchema);
