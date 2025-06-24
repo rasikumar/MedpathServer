@@ -1,4 +1,4 @@
-import { UniversityForm } from "../Model/University.js";
+import { UniversityForm } from "../model/University.js";
 
 export const handleUniversityForm = async (req, res) => {
   const formData = req.body;

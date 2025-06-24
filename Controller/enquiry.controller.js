@@ -1,4 +1,4 @@
-import { EnquiryForm } from "../Model/Enquiry.js";
+import { EnquiryForm } from "../model/Enquiry.js";
 
 export const handleEnquiryForm = async (req, res) => {
   const formData = req.body;

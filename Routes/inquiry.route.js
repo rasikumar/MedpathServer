@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { handleEnquiryForm } from "../Controller/enquiry.controller.js";
+import { handleEnquiryForm } from "../controller/enquiry.controller.js";
 
 const EnquiryRoute = Router();
 

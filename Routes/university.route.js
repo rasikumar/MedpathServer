@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { handleUniversityForm } from "../Controller/university.controller.js";
+import { handleUniversityForm } from "../controller/university.controller.js";
 
 const universityRouter = Router();
 
