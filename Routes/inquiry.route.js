@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { handleEnquiryForm } from "../controller/enquiry.controller.js";
 
-const EnquiryRoute = Router();
+const EnquiryRouter = Router();
 
-EnquiryRoute.post("/submit-enquiry", handleEnquiryForm);
+EnquiryRouter.post("/submit-enquiry", handleEnquiryForm);
 
-export default EnquiryRoute;
+export default EnquiryRouter;
